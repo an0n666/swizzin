@@ -256,7 +256,7 @@ function build_deluge() {
         fi
     fi
     rm_if_exists /tmp/deluge
-    git clone -b ${DELUGE_VERSION} git://deluge-torrent.org/deluge.git /tmp/deluge >> "${log}" 2>&1 || {
+    git clone -b ${DELUGE_VERSION} https://github.com/an0n666/deluge /tmp/deluge >> "${log}" 2>&1 || {
         echo_warn "Cloning Deluge from deluge-torrent.org failed, attempting github backup."
         git clone -b ${DELUGE_VERSION} https://github.com/deluge-torrent/deluge/ >> "${log}" 2>&1 || {
             echo_error "Cloning Deluge from github failed. Setup will now exit"
